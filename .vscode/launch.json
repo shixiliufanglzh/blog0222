@@ -7,11 +7,11 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "启动程序",
+            "name": "Launch Program",
+            "program": "${workspaceFolder}/backend/bin/www.js",
             "skipFiles": [
                 "<node_internals>/**"
-            ],
-            "program": "${workspaceFolder}/bin/www.js"
+            ]
         }
     ]
 }
