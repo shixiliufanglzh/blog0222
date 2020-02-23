@@ -9,7 +9,6 @@ import { ConfigService } from './core/services/config.service';
 
 export function initAppConfig(configService: ConfigService) {
   return () => configService.init();
-  // return configService.init;
 }
 
 @NgModule({

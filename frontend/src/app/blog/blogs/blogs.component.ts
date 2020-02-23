@@ -8,7 +8,7 @@ import { ConfigService } from 'src/app/core/services/config.service';
   styleUrls: ['./blogs.component.scss']
 })
 export class BlogsComponent implements OnInit {
-
+  blogs = []
   constructor(
     private http: HttpClient,
     private configService: ConfigService
@@ -20,9 +20,18 @@ export class BlogsComponent implements OnInit {
 
   getBlogs() {
     const url = this.configService.serviceUrl + '/api/blog/list';
-    this.http.get(url).subscribe(result => {
-      console.log(result)
+    this.http.get(url).subscribe((result: any) => {
+      console.log('blogs: ', result)
+      if (result && result.errNo === 0) {
+        this.blogs = result.data || [];
+      } else {
+        alert(result ? result.message : '意外的错误' );
+      }
     })
+  }
+
+  filterByAuthor(author: string) {
+    
   }
 
 }

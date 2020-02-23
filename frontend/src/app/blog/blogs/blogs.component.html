@@ -1,1 +1,9 @@
-<p>blogs works!</p>
+<h2>blog list</h2>
+
+<div>
+    <div style="margin-bottom: 20px;" *ngFor="let blog of blogs">
+        <h3 style="margin-bottom: 6px;">{{blog.title}}</h3>
+        author:<span style="color: #999; cursor: pointer;" (click)="filterByAuthor(blog.author)">{{blog.author}}</span> 
+        created time:<span style="color: #999">{{blog.createTime}}</span>
+    </div>
+</div>

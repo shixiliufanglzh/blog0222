@@ -7,6 +7,8 @@ import { HttpClient } from '@angular/common/http';
 export class ConfigService {
   configFilePath = '../../../assets/config.json';
   serviceUrl = '';
+
+  currentUser: any;
   
   constructor(
     private http: HttpClient
