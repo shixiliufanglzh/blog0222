@@ -4,6 +4,8 @@ const handleBlogRouter = require('./src/router/blog');
 const handleUserRouter = require('./src/router/user');
 const redisStorage = require('./src/db/redis');
 
+const {access} = require('./src/utilities/log');
+
 // const SESSION_DATA = {};
 
 const getCookieExpires = () => {
@@ -37,6 +39,7 @@ const getPostData = req => {
 }
 
 const serverHandle = (req, res) => {
+    access(`${req.method}-${req.url}-${req.headers['user-agent']}-${Date.now()}`);
     res.setHeader('Content-type', 'application/json');
 
     const url = req.url;
