@@ -1,4 +1,5 @@
 .vscode
 /backend/node_modules/
 /backend-express/node_modules/
+/backend-koa2/node_modules/
 /frontend/node_modules/
